@@ -1,0 +1,126 @@
+@dpi: 100;
+@bgcolor: #40a6fb;
+@unit: rem;
+@colorfont: #000;
+
+.clearfix(){
+    zoom:1;
+    &:after{
+        content: "";
+        width: 0;
+        height: 0;
+        clear: both
+    }
+}
+
+.flex(@justify:center, @item: center){
+    display: flex;
+    justify-content: @justify;
+    align-items: @item;
+}
+
+.width(@width){
+    width: unit(@width/@dpi, @unit);
+}
+
+.height(@height){
+    height: unit(@height/@dpi, @unit);
+}
+
+.margin(@top, @rigth, @bottom, @left){
+    margin: unit(@top/@dpi, @unit) unit(@rigth/@dpi, @unit) unit(@bottom/@dpi, @unit) unit(@left/@dpi, @unit);
+}
+
+.margin-top(@margin){
+    margin-top: unit(@margin/@dpi, @unit);
+}
+
+.margin-right(@margin){
+    margin-right: unit(@margin/@dpi, @unit);
+}
+
+.margin-bottom(@margin){
+    margin-bottom: unit(@margin/@dpi, @unit);
+}
+
+.margin-left(@margin){
+    margin-left: unit(@margin/@dpi, @unit);
+}
+
+.padding(@top, @rigth, @bottom, @left){
+    padding: unit(@top/@dpi, @unit) unit(@rigth/@dpi, @unit) unit(@bottom/@dpi, @unit) unit(@left/@dpi, @unit);
+}
+
+.padding-top(@padding){
+    padding-top: unit(@padding/@dpi, @unit);
+}
+
+.padding-right(@padding){
+    padding-right: unit(@padding/@dpi, @unit);
+}
+
+.padding-bottom(@padding){
+    padding-bottom: unit(@padding/@dpi, @unit);
+}
+
+.padding-left(@padding){
+    padding-left: unit(@padding/@dpi, @unit);
+}
+
+.border(@px, @style: solid, @color){
+    border: unit(@px/@dpi, @unit) @style @color;
+}
+
+.border-top(@padding){
+    border-top: unit(@px/@dpi, @unit) @style @color;
+}
+
+.border-right(@padding){
+    border-right: unit(@px/@dpi, @unit) @style @color;
+}
+
+.border-bottom(@padding){
+    border-bottom: unit(@px/@dpi, @unit) @style @color;
+}
+
+.border-left(@padding){
+    border-left: unit(@px/@dpi, @unit) @style @color;
+}
+
+.font-size(@size){
+    font-size: unit(@size/@dpi, @unit);
+}
+
+.line-height(@heigth){
+    line-height: unit(@heigth/@dpi, @unit);
+}
+
+.box-shadow(@x, @y, @o, @s, @color){
+    box-shadow: unit(@x/@dpi, @unit) unit(@y/@dpi, @unit) unit(@o/@dpi, @unit) unit(@s/@dpi, @unit) @color;
+}
+
+.hero(){
+    .list{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @height: 120;
+        img{
+            margin-right: unit(35/@dpi, @unit);
+            width: unit(@height/@dpi, @unit);
+            height: unit(@height/@dpi, @unit);
+            border-radius: 50%;
+        }
+        .info{
+            padding: unit(10/@dpi, @unit) 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: unit(@height/@dpi, @unit);
+            box-sizing: border-box;
+            >p>span{
+                color: #777;
+            }
+        }
+    }
+}

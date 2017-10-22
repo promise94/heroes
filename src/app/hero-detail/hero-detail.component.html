@@ -1,0 +1,45 @@
+<div id="hero-detail">
+  <div class="hero-header">
+    <img src="https://picsum.photos/750/370" alt="">
+    <p class="explain padding20">
+      <span>黑暗之女</span>
+      <span>法师</span>
+      <span>攻&nbsp;:&nbsp;2</span>
+      <span>法&nbsp;:&nbsp;10</span>
+      <span>防&nbsp;:&nbsp;3</span>
+      <span>操作&nbsp;:&nbsp;4</span>
+    </p>
+  </div>
+  <ul class="tab">
+    <li (click)="tabTagger(1)" [class.active]="tabSelectIndex === 1">技能说明</li>
+    <li (click)="tabTagger(2)" [class.active]="tabSelectIndex === 2">皮肤欣赏</li>
+  </ul>
+  <div class="tab-car-fist" *ngIf="tabSelectIndex === 1">
+    <p class="title"><span class="icon icon-LOL"></span>技能介绍</p>
+    <div class="skills-list">
+      <h3>嗜火（被动）</h3>
+      <div class="skills-info padding20">
+        <img src="https://picsum.photos/g/140/140" alt="">
+        <div class="skills-detail">
+          <p>美食坊is好地方哈司法his爱国飞大会覅阿斯蒂芬山东发挥地方安抚</p>
+          <p>冷却时间&nbsp;:&nbsp;4/4/4/4/4秒</p>
+          <p>消耗&nbsp;:&nbsp;60/65/70/75/80&nbsp;法力</p>
+        </div>
+      </div>
+    </div>
+    <p class="title"><span class="icon icon-LOL"></span>技能加点推荐</p>
+    <div class="jiadian padding20">
+      <div>辅助&nbsp;:&nbsp;WQWEWRWQWQRQQEEREE</div>
+      <div>中单&nbsp;:&nbsp;WQWEWRWQWQRQQEEREE</div>
+    </div>
+  </div>
+  <div class="tab-car-two" *ngIf="tabSelectIndex === 2">
+      <p class="title"><span class="icon icon-LOL"></span>点击皮肤可以观看介绍视频哦</p>
+      <div class="figure">
+        <a href="javascript:;">
+          <img src="https://picsum.photos/750/360/?blur">
+        </a>
+        <p class="figcaption">哥特萝莉 安妮</p>
+      </div>
+  </div>
+</div>

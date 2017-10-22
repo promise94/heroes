@@ -1,0 +1,29 @@
+<div id="player">
+  <div class="player-header">
+    <input type="text" placeholder="搜索召唤师">
+    <button class="icon icon-search">搜索</button>
+  </div>
+  <div class="player-content">
+    <!-- 所搜结果展示 -->
+    <ul class="result">
+      <li>
+        <a class="list" [routerLink]="['/main/playerdetail', 15]">
+          <img src="http://picsum.photos/100/100/?random" alt="">
+          <div class="info">
+            <h3>寒冰手</h3>
+            <p>
+              <span>影流</span>
+              <span>等级1</span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <!-- 未搜索到结果提示 -->
+    <div class="nothing" style="display: none">
+      <span class="icon icon-Nocontent"></span>
+      <p>暂时木有内容呀~~</p>
+    </div>
+  </div>
+</div>

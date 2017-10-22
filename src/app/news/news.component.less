@@ -1,0 +1,37 @@
+@import '../../assets/less/global.less';
+
+#news{
+    .list{
+        .item{
+            padding: unit(12/@dpi, @unit);
+            .flex;
+            justify-content: flex-start;
+            border-bottom: unit(2/@dpi, @unit) solid #eee;
+            .media{
+                margin-right: unit(25/@dpi, @unit);
+                width: unit(150/@dpi, @unit);
+                height: unit(130/@dpi, @unit);
+            }
+            .info{
+                .flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-grow: 1;
+                height: 100%;
+                .info-content{
+                    color: #333;
+                }
+                .info-footer{
+                    color: #333;
+                    span{
+                        &:last-child{
+                            margin-left: unit(50/@dpi, @unit);
+                            color: @bgcolor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

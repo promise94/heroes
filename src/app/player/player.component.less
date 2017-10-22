@@ -1,0 +1,55 @@
+@import '../../assets/less/global.less';
+#player{
+    min-height: 100%;
+    .player-header{
+        .flex;
+        position: relative;
+        width: 100%;
+        height: unit(100/@dpi, @unit);
+        background: @bgcolor;
+        input{
+            width: unit(660/@dpi, @unit);
+            height: unit(70/@dpi, @unit);
+            text-indent: unit(35/@dpi, @unit);
+            border-radius: unit(10/@dpi, @unit);
+            outline: none;
+        }
+        button{
+            position: absolute;
+            right: unit(65/@dpi, @unit);
+            color: @bgcolor;
+            background: transparent;
+            border: 0;
+            outline: none;
+        }
+    }
+    .player-content{
+        // 搜索结果
+        .result{
+            padding: 0 unit(40/@dpi, @unit);
+            .hero;
+            .list{
+                padding: unit(45/@dpi, @unit) 0 unit(20/@dpi, @unit);
+                border-bottom: unit(2/@dpi, @unit) solid #eee;
+                .info{
+                    color: #333;
+                    >p>span{
+                        &:last-of-type{
+                            margin-left: unit(35/@dpi, @unit);
+                        }
+                    }
+                }
+            }
+        }
+        // 无结果
+        .nothing{
+            margin-top: unit(260/@dpi, @unit);
+            .flex;
+            flex-direction: column;
+            color: #aaa;
+            >span{
+                font-size: unit(200/@dpi, @unit);
+            }
+        }
+    }
+}

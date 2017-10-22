@@ -1,0 +1,100 @@
+@import '../../assets/less/global.less';
+#playerDetail{
+    .header{
+        width: 100%;
+        height: unit(400/@dpi, @unit);
+        .flex;
+        flex-direction: column;
+        background: #1a90d6 url('../../assets/images/bg_player.png');
+        color: #fff;
+        >img{
+            width: unit(150/@dpi, @unit);
+            height: unit(150/@dpi, @unit);
+            border-radius: 50%;
+        }
+        .grade{
+            margin: unit(20/@dpi, @unit) 0 0;
+            font-size: unit(32/@dpi, @unit);
+            font-weight: 600;
+        }
+        .dan{
+            margin: unit(15/@dpi, @unit) 0;
+            span{
+                &:first-child{
+                    margin-right: unit(30/@dpi, @unit);
+                }
+            }
+        }
+        .zhandou{
+            span{
+                &:first-child{
+                    margin-right: unit(20/@dpi, @unit);
+                }
+            }
+        }
+    }
+    .intro{
+        padding: unit(40/@dpi, @unit) 0 unit(30/@dpi,@unit);
+        border-bottom: unit(2/@dpi, @unit) solid #ddd;
+        >ul{
+            box-sizing: border-box;
+            padding: 0 unit(70/@dpi, @unit);
+            .flex;
+            justify-content: space-between;
+            &:last-of-type{
+                margin-top: unit(66/@dpi, @unit);
+            }
+            >li{
+                width: unit(180/@dpi, @unit);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                span{
+                    &:first-of-type{
+                        color: #2b8ddf;
+                        font-size: unit(75/@dpi, @unit);
+                    }
+                }
+            }
+        }
+    }
+    .game{
+        width: 100%;
+        >ul{
+            padding-left: unit(40/@dpi, @unit);
+            >li{
+                padding: unit(20/@dpi, @unit) 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: unit(2/@dpi, @unit) solid #ddd;
+                color: #777;
+                >div{
+                    .flex;
+                }
+                img{
+                    width: unit(120/@dpi, @unit);
+                    height: unit(120/@dpi, @unit);
+                    border-radius: 50%;
+                }
+                .game-info{
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: unit(35/@dpi, @unit);
+                    span{
+                        &:first-of-type{
+                            margin-bottom: unit(15/@dpi, @unit);
+                            color: red;
+                            font-size: unit(32/@dpi, @unit);
+                        }
+                    }
+                }
+                .btn-rigth{
+                    margin-right: unit(40/@dpi, @unit);
+                }
+            }
+        }
+    }
+}

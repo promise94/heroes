@@ -1,0 +1,102 @@
+@import '../../assets/less/global.less';
+.padding18{
+    padding-left: unit(18/@dpi, @unit);
+    padding-right: unit(18/@dpi, @unit);
+}
+.borderbottom(){
+    border-bottom: unit(2/@dpi, @unit) solid #ddd;
+}
+#game{
+    .game-header{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: unit(80/@dpi, @unit);
+        background: #f0f0f0;
+    }
+    .status{
+        .flex;
+        justify-content: space-between;
+        height: unit(94/@dpi, @unit);
+        .borderbottom;
+        >span{
+            width: unit(145/@dpi, @unit);
+            height: unit(55/@dpi, @unit);
+            line-height: 2;
+            background: #f90;
+            color: #fff;
+            text-align: center;
+        }
+        .tubiao{
+            span{
+                color: @bgcolor;
+                font-size: unit(40/@dpi, @unit);
+                margin: 0 unit(10/@dpi, @unit);
+            }
+        }
+    }
+    .game-body{
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: unit(18/@dpi, @unit);
+        .media{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: unit(15/@dpi, @unit);
+            height: unit(190/@dpi, @unit);
+            >li{
+                &:first-of-type{
+                    width: unit(125/@dpi, @unit);
+                    margin-right: unit(25/@dpi, @unit);
+                    font-size: 0;
+                    img{
+                        width: unit(125.5/@dpi, @unit);
+                        height: unit(125/@dpi, @unit);
+                    }
+                    >p{
+                        box-sizing: border-box;
+                        width: unit(124.5/@dpi, @unit);
+                        height: unit(55/@dpi, @unit);
+                        line-height: 2;
+                        text-align: center;
+                        font-size: unit(28/@dpi, @unit);
+                        font-weight: 600;
+                        border: unit(1/@dpi, @unit) solid #23a723;
+                        border-top: 0;
+                    }
+                }
+                &:last-of-type{
+                    box-sizing: border-box;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-right: unit(30/@dpi, @unit);
+                    height: 100%;
+                    .borderbottom;
+                    >div{
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: unit(25/@dpi, @unit) 0 unit(25/@dpi, @unit) unit(12/@dpi, @unit) ;
+                        height: 100%;
+                    }
+                    .skill{
+                        img{
+                            width: unit(50/@dpi, @unit);
+                            height: unit(50/@dpi, @unit);
+                            margin-right: unit(15/@dpi, @unit);
+                        }
+                    }
+                    .num{
+                        color: #a5a5a5;
+                    }
+                }
+            }
+        }
+    }
+}

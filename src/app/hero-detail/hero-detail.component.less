@@ -1,0 +1,114 @@
+@import '../../assets/less/global.less';
+.padding20{
+    padding-right: unit(20/@dpi, @unit);
+    padding-left: unit(20/@dpi, @unit);
+}
+#hero-detail{
+    width: 100%;
+    .hero-header{
+        position: relative;
+        height: unit(370/@dpi, @unit);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .explain{
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: unit(80/@dpi, @unit);
+            background: rgba(0, 0, 0, .4);
+            color: #fff;
+        }
+    }
+    .tab{
+        .flex;
+        justify-content: space-around;
+        li{
+            box-sizing: border-box;
+            width: unit(227/@dpi, @unit);
+            height: unit(85/@dpi, @unit);
+            line-height: 2.5;
+            font-size: unit(32/@dpi, @unit);
+            font-weight: 600;
+            text-align: center;
+            &.active{
+                color: @bgcolor;
+                border-bottom: unit(4/@dpi, @unit) solid @bgcolor;
+            }
+        }
+    }
+    .title{
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: unit(15/@dpi, @unit);
+        height: unit(85/@dpi, @unit);
+        background: #f0f0f0;
+        font-size: unit(32/@dpi, @unit);
+        span{
+            margin-right: unit(25/@dpi, @unit);
+            font-size: unit(40/@dpi, @unit);
+        }
+    }
+    .tab-car-fist{
+        .skills-list{
+            h3{
+                margin-top: unit(15/@dpi, @unit);
+                margin-bottom: unit(25/@dpi, @unit);
+                text-indent: unit(180/@dpi, @unit);
+            }
+            .skills-info{
+                box-sizing: border-box;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-bottom: unit(44/@dpi, @unit);
+                border-bottom: unit(1/@dpi, @unit) solid #f0f0f0;
+                >img{
+                    width: unit(140/@dpi, @unit);
+                    height: unit(140/@dpi, @unit);
+                    flex-basis: unit(140/@dpi, @unit);
+                }
+                .skills-detail{
+                    flex-basis: unit(550/@dpi, @unit);
+                    margin-left: unit(22/@dpi, @unit);
+                    font-size: unit(24/@dpi, @unit);
+                }
+            }
+        }
+        .jiadian{
+            padding-top: unit(20/@dpi, @unit);
+            padding-bottom: unit(20/@dpi, @unit);
+            font-size: unit(32/@dpi, @unit);
+            div{
+                margin-bottom: unit(25/@dpi, @unit);
+                color: #a4a4a4;
+            }
+        }
+    }
+    .tab-car-two{
+        box-sizing: border-box;
+        .figure{
+            padding: unit(15/@dpi, @unit);
+            a{
+                display: block;
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+            .figcaption{
+                height: unit(85/@dpi, @unit);
+                text-align: center;
+                font-weight: 600;
+                font-size: unit(32/@dpi, @unit);
+            }
+        }
+    }
+}

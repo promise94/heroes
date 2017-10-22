@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* cssreset */
+html{
+    font-size: 625%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    height: 100%;
+    overflow: hidden;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: .28rem/1.5 Arial, Helvetica, sans-serif;
+}
+input{
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: .24rem;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button{
+    outline: none;
+    border: 0;
+}
+/* cssreset end */
+
+/* common css */
+#wrap{
+    height: 100%;
+    width: 7.5rem;
+    box-sizing: border-box;
+    color: #333;
+}
+.icon {
+    font-family:"iconfont" !important;
+    font-size:.32rem;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.btn{
+    padding: .12rem .32rem;
+    border: 2px solid rgba(0, 0, 0, .2);
+    background: #40a6fb linear-gradient(hsla(0, 0%, 100%, .2), transparent);
+    box-shadow: 0 .02rem .1rem rgba(0, 0, 0, .5);
+    border-radius: .08rem;
+    font-size: .28rem;
+    line-height: 1.5;
+    color: white;
+    text-shadow: 0 -.02rem .1rem rgba(0, 0, 0, .5);
+}
