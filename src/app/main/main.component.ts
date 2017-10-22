@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { slideInDownAnimation } from '../animations';
 import { Location } from '@angular/common';
 import { Router, RouterState, ActivatedRoute, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.less']
+  styleUrls: ['./main.component.less'],
+  animations: [slideInDownAnimation],
 })
 export class MainComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'block';
+  @HostBinding('style.height') height = '100%';
   constructor(
     private location: Location,
     private router: Router,

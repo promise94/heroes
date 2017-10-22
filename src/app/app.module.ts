@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // 转场动画
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { AppRouterModule } from './app-router/app-router.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRouterModule,
   ],
   providers: [],
