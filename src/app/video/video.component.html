@@ -1,23 +1,13 @@
 <div id="video">
   <ul class="video-content">
-    <li class="list">
+    <li class="list" *ngFor="let video of videoList">
       <div class="img">
-        <img src="http://picsum.photos/330/220/?random" alt="">
+        <img [src]="video.img" alt="">
       </div>
-      <p class="info">《天下英雄》终极时刻野怪的复仇复仇复仇</p>
+      <p class="info">{{video.title}}</p>
       <p class="time">
-        <span>2017-03-20</span>
-        <span>17万评论</span>
-      </p>
-    </li>
-    <li class="list">
-      <div class="img">
-        <img src="http://picsum.photos/g/330/220/?random" alt="">
-      </div>
-      <p class="info">《天下英雄》终极时刻野怪的复仇复仇复仇</p>
-      <p class="time">
-        <span>2017-03-20</span>
-        <span>17万评论</span>
+        <span>{{video.createdate | date:'yyyy-mm-dd'}}</span>
+        <span>{{video.comments}}万评论</span>
       </p>
     </li>
   </ul>

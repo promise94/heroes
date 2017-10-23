@@ -11,7 +11,7 @@ import { PlayerComponent } from '../player/player.component';
 import { HeroComponent } from '../hero/hero.component';
 import { VideoComponent } from '../video/video.component';
 import { PlayerDetailComponent } from '../player-detail/player-detail.component';
-import {GameComponent} from '../game/game.component';
+import { GameComponent } from '../game/game.component';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
 const ROUTERS: Routes = [
@@ -19,14 +19,14 @@ const ROUTERS: Routes = [
   {
     path: 'main', component: MainComponent, children: [
       { path: '', redirectTo: 'news', pathMatch: 'full' },
-      { path: 'news', component: NewsComponent },
-      { path: 'player', component: PlayerComponent },
-      { path: 'hero', component: HeroComponent },
-      { path: 'video', component: VideoComponent },
-      { path: 'newdetail/:id', component: NewsDetailComponent },
-      { path: 'playerdetail/:id', component: PlayerDetailComponent },
-      { path: 'game/:id', component: GameComponent },
-      { path: 'herodetail/:id', component: HeroDetailComponent },
+      { path: 'news', component: NewsComponent, data: { title: '资讯' } },
+      { path: 'player', component: PlayerComponent, data: { title: '搜索' } },
+      { path: 'hero', component: HeroComponent, data: { title: '英雄列表' } },
+      { path: 'video', component: VideoComponent, data: { title: '最新视频' } },
+      { path: 'newdetail/:id', component: NewsDetailComponent, data: { title: '资讯详情' } },
+      { path: 'playerdetail/:id', component: PlayerDetailComponent, data: { title: '玩家详情' } },
+      { path: 'game/:id', component: GameComponent, data: { title: '对战详情' } },
+      { path: 'herodetail/:id', component: HeroDetailComponent, data: { title: '' } },
     ]
   },
   { path: '', redirectTo: '/index', pathMatch: 'full' },

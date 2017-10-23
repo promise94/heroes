@@ -38,3 +38,17 @@
         }
     }
 }
+
+#scroll{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+    #scroll-content{
+        width: 100%;
+        position: absolute;
+        transform: translateY(0);
+        padding-bottom: unit(185/@dpi, @unit);
+    }
+}

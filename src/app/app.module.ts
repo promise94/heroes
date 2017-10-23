@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // 转场动画
+import { HttpModule } from '@angular/http'; // http请求模块
 
+import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -17,6 +20,16 @@ import { GameComponent } from './game/game.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 // 路由模块
 import { AppRouterModule } from './app-router/app-router.module';
+
+// 服务
+import { AppService } from './server/app.service';
+
+// swiper配置
+const SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto',
+  keyboardControl: true
+}
 
 @NgModule({
   declarations: [
@@ -36,9 +49,12 @@ import { AppRouterModule } from './app-router/app-router.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    SwiperModule.forRoot(SWIPER_CONFIG),
+    HttpModule,
     AppRouterModule,
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

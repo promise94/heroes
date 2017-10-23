@@ -1,14 +1,14 @@
 <div id="news">
-  <app-carousel></app-carousel>
+  <app-carousel [list]="bannerNew"></app-carousel>
   <div class="list">
-    <div class="item" (click)="goDetail(12)">
-      <img class="media" src="http://picsum.photos/150/130/?random" alt="">
+    <div class="item" (click)="goDetail(12)" *ngFor="let item of newsList">
+      <img class="media" [src]="item.image_url_small" alt="">
       <div class="info">
-        <h3 class="info-title">英雄联盟免费广告</h3>
-        <p class="info-content">我们将要发布免费英雄啦</p>
+        <h3 class="info-title">{{item.title}}</h3>
+        <p class="info-content">{{item.summary}}</p>
         <p class="info-footer">
-          <span>2017-03-20</span>
-          <span>180万订阅</span>
+          <span>{{item.publication_date}}</span>
+          <span>{{item.pv | slice:0:-4}}万订阅</span>
         </p>
       </div>
     </div>

@@ -2,7 +2,11 @@
   <span (click)="goBack()" class="icon icon-back"></span>
   <p>{{title}}</p>
 </header>
-<router-outlet id="child"></router-outlet>
+<div id="scroll">
+  <div id="scroll-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <nav id="nav">
   <a *ngFor="let link of LINK" [routerLink]="link.path" routerLinkActive="active" (click)="selectedItem(link)">
     <span class="icon {{link.icon}}"></span>

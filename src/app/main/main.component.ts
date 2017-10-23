@@ -1,21 +1,17 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { slideInDownAnimation } from '../animations';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router, RouterState, ActivatedRoute, NavigationStart } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less'],
-  animations: [slideInDownAnimation],
 })
 export class MainComponent implements OnInit {
-  @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display') display = 'block';
-  @HostBinding('style.height') height = '100%';
   constructor(
     private location: Location,
     private router: Router,
+    private route: ActivatedRoute,
   ) { } // 构造函数
 
   private title = '资讯';
@@ -27,8 +23,12 @@ export class MainComponent implements OnInit {
     { name: '视频', path: './video', icon: 'icon-video' },
   ]
   // 初始化时
-  ngOnInit(): void { }
+  ngOnInit(): void {
 
+  }
+  ngAfterContentChecked(): void {
+    // console.log('afterContent', this.router);
+  }
   // 事件处理
   selectedItem(item): void { // 设置头部导航条title
     this.title = item.name;

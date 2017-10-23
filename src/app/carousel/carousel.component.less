@@ -1,15 +1,21 @@
 @import '../../assets/less/global.less';
 
 #carousel{
+    position: relative;
     width: 100%;
     .height(370);
     // overflow: hidden;
     .container{
+        position: absolute;
         .flex;
         justify-content: flex-start;
-        >li{
-            width: 100%;
-            .height(370);
+        li{
+            // width: unit(749.9/@dpi, @unit);
+            // .height(370);
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }
