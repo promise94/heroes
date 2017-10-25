@@ -1,7 +1,7 @@
 <div id="news">
   <app-carousel [list]="bannerNew"></app-carousel>
   <div class="list">
-    <div class="item" (click)="goDetail(12)" *ngFor="let item of newsList">
+    <div class="item" (click)="goDetail(item.article_url,item.title)" *ngFor="let item of newsList">
       <img class="media" [src]="item.image_url_small" alt="">
       <div class="info">
         <h3 class="info-title">{{item.title}}</h3>

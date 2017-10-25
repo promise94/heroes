@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -7,31 +8,31 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   @Input() list;
   private config: Object;
+  private index: number = 0;
 
   ngOnInit() {
     let num = this.list.length;
     this.config = {
-      initialSlide: -1,
+      initialSlide: 0,
       speed: 1500,
       autoplay: 1500,
       autoplayDisableOnInteraction: false,
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-        bulletElement: 'span'
-      },
-      loopedSlides: num,
-      loopAdditionalSlides: 1,
-      loop: true
+      pagination: '.swiper-pagination',
+      // loopedSlides: num,
+      // loopAdditionalSlides: 1,
+      // loop: true
     }
   }
 
   swiperChange(event) {
-    console.log('change', event)
+
+  }
+
+  goDetail(url, title) {
+    this.router.navigate(['main/newdetail', url, { title }]);
   }
 }

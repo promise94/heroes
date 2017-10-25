@@ -2,22 +2,24 @@
 #index{
     width: 100%;
     height: 100%;
+    .flex;
+    flex-direction: column;
     background: rgb(32, 34, 36);
     background-image: url("../../assets/images/index.png");
     background-size: cover;
     text-align: center;
 }
 .logo{
-    margin-top: 6rem;
-    width: 5.4rem;
+    margin-top: unit(200/@dpi, @unit);
+    width: unit(540/@dpi, @unit);
 }
 .title{
-    margin-top: .35rem;
+    margin-top: unit(35/@dpi, @unit);
     color: white;
-    font-size: .66rem;
+    font-size: unit(66/@dpi, @unit);
 }
 .go{
     display: inline-block;
-    margin-top: .75rem;
-    padding: .16rem .7rem;
+    margin-top: unit(75/@dpi, @unit);
+    padding: unit(16/@dpi, @unit) unit(70/@dpi, @unit);
 }

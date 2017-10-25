@@ -1,0 +1,8 @@
+<div id="video-detail" [style.height.rem]="height">
+  <h1>{{video.title}}</h1>
+  <p>
+    <span>{{video.createdate | date: 'yyyy-mm-dd HH:mm:ss'}}</span>
+    <span>{{video.comments}}万评论</span>
+  </p>
+  <iframe [src]="src" frameborder="0"></iframe>
+</div>

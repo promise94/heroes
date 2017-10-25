@@ -1,6 +1,6 @@
 <header id="header">
   <span (click)="goBack()" class="icon icon-back"></span>
-  <p>{{title}}</p>
+  <p>{{title | slice:0:10}}</p>
 </header>
 <div id="scroll">
   <div id="scroll-content">

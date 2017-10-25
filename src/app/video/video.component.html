@@ -2,7 +2,7 @@
   <ul class="video-content">
     <li class="list" *ngFor="let video of videoList">
       <div class="img">
-        <img [src]="video.img" alt="">
+        <img [src]="video.img" alt="" (click)="showVideo(video.guid)">
       </div>
       <p class="info">{{video.title}}</p>
       <p class="time">

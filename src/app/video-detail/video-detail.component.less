@@ -1,0 +1,33 @@
+@import url("../../assets/less/global.less");
+#video-detail{
+    box-sizing: border-box;
+    // background: rgba(0, 0, 0, 0.3);
+    padding-top: unit(70/@dpi, @unit);
+    // .flex;
+    // flex-direction: column;
+    // align-content: space-around;
+    h1{
+        font-size: unit(38/@dpi, @unit);
+        text-align: center;
+    }
+    p{
+        box-sizing: border-box;
+        margin-top: unit(50/@dpi, @unit);
+        padding: 0 unit(50/@dpi, @unit);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: unit(32/@dpi, @unit);
+        text-align: center;
+        span{
+            &:last-of-type{
+                color: @bgcolor;
+            }
+        }
+    }
+    iframe{
+        margin-top: unit(150/@dpi, @unit);
+        width: 100%;
+        min-height: 50%;
+    }
+}

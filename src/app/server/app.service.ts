@@ -5,7 +5,6 @@ import 'rxjs/add/operator/toPromise';
 
 import { bannerNews } from '../../data/banner';
 import { newsList } from '../../data/newslist';
-import { videoList } from '../../data/videolist';
 
 @Injectable()
 export class AppService {
@@ -23,9 +22,6 @@ export class AppService {
   getNews() { // 资讯列表
     return newsList;
   }
-  getVedio() { // 视频列表
-    return videoList;
-  }
 
   getPlayer(keyword: string): Promise<any> {
     const url = `/api/UserArea?${keyword}`;
@@ -36,15 +32,13 @@ export class AppService {
       })
   }
 
-  getHeros(): Promise<Hero[]> {
-    const url = `/api/champion`;
-    console.log('headers', this.header);
-    return this.http.get(url, { headers: this.header }).toPromise()
-      .then(res => {
-        console.log('res', res);
-        return res.json().data as Hero[];
-      })
-  }
+  // getHeros(): Promise<Hero[]> {
+    // return this.http.get('/api/champion', { headers: this.header }).toPromise()
+    //   .then(res => {
+    //     console.log('res', res);
+    //     return res.json().data as Hero[];
+    //   })
+  // }
 
   // 请求出错处理函数
   private handleError(error: any): Promise<any> {

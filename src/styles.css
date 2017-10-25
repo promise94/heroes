@@ -44,7 +44,7 @@ button,
 input,
 select,
 textarea {
-    font: .28rem/1.5 Arial, Helvetica, sans-serif;
+    font: .14rem/1.5 Arial, Helvetica, sans-serif;
 }
 input{
     -webkit-appearance:none;
@@ -66,7 +66,7 @@ samp {
 }
 
 small {
-    font-size: .24rem;
+    font-size: .12rem;
 }
 
 ul,
@@ -113,25 +113,25 @@ button{
 /* common css */
 #wrap{
     height: 100%;
-    width: 7.5rem;
+    width: 3.75rem;
     box-sizing: border-box;
     color: #333;
 }
 .icon {
     font-family:"iconfont" !important;
-    font-size:.32rem;
+    font-size:.16rem;
     font-style:normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .btn{
-    padding: .12rem .32rem;
+    padding: .6rem .16rem;
     border: 2px solid rgba(0, 0, 0, .2);
     background: #40a6fb linear-gradient(hsla(0, 0%, 100%, .2), transparent);
-    box-shadow: 0 .02rem .1rem rgba(0, 0, 0, .5);
-    border-radius: .08rem;
-    font-size: .28rem;
+    box-shadow: 0 .01rem .05rem rgba(0, 0, 0, .5);
+    border-radius: .04rem;
+    font-size: .14rem;
     line-height: 1.5;
     color: white;
-    text-shadow: 0 -.02rem .1rem rgba(0, 0, 0, .5);
+    text-shadow: 0 -.01rem .05rem rgba(0, 0, 0, .5);
 }
