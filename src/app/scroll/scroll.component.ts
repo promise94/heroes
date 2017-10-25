@@ -175,5 +175,88 @@ export class ScrollComponent implements OnInit, OnChanges {
 
     const __bodyScrollTop = scrollTop;
     const __bodyScrollHeight = scrollHeight;
+    const __differValue = ((__bodyScrollHeight - __bodyScrollTop - screen.height) / __bodyScrollHeight) * 100;
+    if (__differValue > (_Percentage < 3 ? 3 : _Percentage)) {
+      this.__Reset();
+      return;
+    }
+    _onNextPage.emit();
+
+    if (!!Info.IsTitleBottom) {
+      Info.TitleBottom = '正在获取数据。。。';
+      divBottom.nativeElement.style.height = '30px';
+    } else {
+      divBottom.nativeElement.style.height = '0px';
+    }
+  }
+
+  SlideRefresh() {
+    const { _onRefresh } = this;
+    if (!_onRefresh) {
+      return;
+    }
+
+    const __ctrl = document.body.children[0].children[1];
+    const { scrollTop } = __ctrl;
+    if (scrollTop === 0) {
+      _onRefresh.emit();
+
+      const { Info, divTop } = this;
+      if (!!Info.IsTitleTop) {
+        Info.TitleTop = '更新中。。。';
+        divTop.nativeElement.style.height = '30px';
+      } else {
+        divTop.nativeElement.style.height = '0px';
+      }
+    } else {
+      this.__Reset();
+    }
+  }
+
+  __JudgeRefreshOrNextPage() {
+    const { Start, Move, TitleTop } = this.Info;
+    const xes = Move.X - Start.X;
+    const yes = Move.Y - Start.Y;
+    const absXes = Math.abs(xes);
+    const absYes = Math.abs(yes);
+    const { divTop, divBottom } = this;
+    if (absXes > 20) {
+      if (absYes < absXes) {
+        return;
+      }
+    }
+    if (yes > 0) { // Refresh操作
+      divTop.nativeElement.style.display = 'none';
+      if (yes > 20) {
+        this.Info.TitleTop = '下拉刷新。。。';
+        divTop.nativeElement.style.display = 'inherit';
+
+        if (yes > 50) {
+          this.Info.IsTitleTop = true;
+          this.Info.TitleTop = '释放刷新数据...';
+          if (yes < 120) {
+            divTop.nativeElement.style.height = yes + 'px';
+          }
+        }
+      } else {
+        divBottom.nativeElement.style.display = 'none';
+        if (absYes > 20) {
+          this.Info.TitleBottom = '上拉加载数据...';
+          divBottom.nativeElement.style.display = 'inherit';
+
+          if (absYes > 30) {
+            this.Info.IsTitleBottom = true;
+            this.Info.TitleBottom = '释放加载下一页数据...';
+          }
+
+          if (absYes < 60) {
+            divBottom.nativeElement.style.height = absYes + 'px';
+          }
+        }
+      }
+    }
+  }
+
+  __RefreshOrNextPageEnd() {
   }
 }
