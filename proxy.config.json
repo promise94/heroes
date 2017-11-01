@@ -1,7 +1,0 @@
-{
-    "/api": {
-        "target": "http://lolapi.games-cube.com",
-        "pathRewrite": {"/api": ""},
-        "secure": false
-    }
-}

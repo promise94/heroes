@@ -1,6 +1,6 @@
 <div id="carousel">
-  <ul class="container" [style]="styles">
-    <swiper [config]="config" (indexChange)="swiperChange($event)">
+  <ul #carousel class="container" [style]="styles">
+    <swiper [config]="config">
       <li class="item" *ngFor="let item of list" (click)="goDetail(item.article_url,item.title)">
         <img [src]="item.image_url_big" [title]="item.title">
       </li>

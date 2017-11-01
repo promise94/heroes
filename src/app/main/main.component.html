@@ -3,9 +3,11 @@
   <p>{{title | slice:0:10}}</p>
 </header>
 <div id="scroll">
-  <div id="scroll-content">
+  <app-scroll [Percentage]="20" (onNextPage)="nextPage()" (onRefresh)="refresh()" (onSlideLeft)="slideLeft()" (onSlideRight)="slideRight()">
+    <!-- <div id="scroll-content"> -->
     <router-outlet></router-outlet>
-  </div>
+    <!-- </div> -->
+  </app-scroll>
 </div>
 <nav id="nav">
   <a *ngFor="let link of LINK" [routerLink]="link.path" routerLinkActive="active" (click)="selectedItem(link)">

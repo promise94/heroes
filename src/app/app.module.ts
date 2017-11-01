@@ -31,8 +31,7 @@ import { AppService } from './server/app.service';
 // swiper配置
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
-  slidesPerView: 'auto',
-  keyboardControl: true
+  slidesPerView: 'auto'
 }
 
 @NgModule({

@@ -1,32 +1,11 @@
 <div id="hero">
   <!-- 英雄列表 -->
   <ul class="hero-content">
-    <li class="list" (click)="goHeroDetail(12)">
-      <img src="http://picsum.photos/100/100/?random" alt="">
+    <li class="list" *ngFor="let hero of heros; index as i" (click)="goHeroDetail(hero.id)">
+      <img [style.flexBasis.rem]="flexBasis" src="http://picsum.photos/100/100/?random={{i}}" alt="">
       <div class="info">
-        <h3>黑暗之女</h3>
-        <p>安妮&nbsp;(&nbsp;Annie&nbsp;)&nbsp;</p>
-      </div>
-    </li>
-    <li class="list">
-      <img src="http://picsum.photos/100/100/?random" alt="">
-      <div class="info">
-        <h3>黑暗之女</h3>
-        <p>安妮&nbsp;(&nbsp;Annie&nbsp;)&nbsp;</p>
-      </div>
-    </li>
-    <li class="list">
-      <img src="http://picsum.photos/100/100/?random" alt="">
-      <div class="info">
-        <h3>黑暗之女</h3>
-        <p>安妮&nbsp;(&nbsp;Annie&nbsp;)&nbsp;</p>
-      </div>
-    </li>
-    <li class="list">
-      <img src="http://picsum.photos/100/100/?random" alt="">
-      <div class="info">
-        <h3>黑暗之女</h3>
-        <p>安妮&nbsp;(&nbsp;Annie&nbsp;)&nbsp;</p>
+        <h3>{{hero.title}}</h3>
+        <p>{{hero.cname}}&nbsp;(&nbsp;{{hero.ename}}&nbsp;)&nbsp;</p>
       </div>
     </li>
   </ul>

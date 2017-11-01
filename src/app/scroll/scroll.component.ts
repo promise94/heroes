@@ -64,22 +64,23 @@ export class ScrollComponent implements OnInit, OnChanges {
     }
   }
 
-  __UpdateLocation(type, event) {
-    const { changedTouches } = event;
-    const { clientX, clientY } = changedTouches[0];
-    this.Info[type].X = clientX;
+  __UpdateLocation(type, event) { // 更新触发事件坐标
+    const { changedTouches } = event;  // touch事件中的，涉及当前(引发)事件的触发点的列表
+    const { clientX, clientY } = changedTouches[0]; // 触发坐标
+    this.Info[type].X = clientX; // 保存相对应事件的触发坐标
     this.Info[type].Y = clientY;
   }
 
-  OnTouchStart(event) {
+  OnTouchStart(event) { // touchstart事件
     this.__UpdateLocation('Start', event);
   }
 
-  OnTouchMove(event) {
+  OnTouchMove(event) { // touchmove事件
+    // console.log('move', event)
     this.__UpdateLocation('Move', event);
   }
 
-  ontouchend(event) {
+  OnTouchEnd(event) { // touchend 事件
     this.__UpdateLocation('End', event);
     this.__RefreshOrNextPageEnd();
     const { Start, End, divTop, divBottom } = this.Info;
@@ -170,8 +171,9 @@ export class ScrollComponent implements OnInit, OnChanges {
     if (!_onNextPage) {
       return;
     }
-    const __ctrl = document.body.children[0].children[1];
+    const __ctrl = document.querySelector('#scroll');
     const { scrollTop, scrollHeight } = __ctrl;
+    console.log('next', scrollTop, scrollHeight);
 
     const __bodyScrollTop = scrollTop;
     const __bodyScrollHeight = scrollHeight;
@@ -196,8 +198,9 @@ export class ScrollComponent implements OnInit, OnChanges {
       return;
     }
 
-    const __ctrl = document.body.children[0].children[1];
+    const __ctrl = document.querySelector('#scroll');
     const { scrollTop } = __ctrl;
+    console.log('refresh', scrollTop);
     if (scrollTop === 0) {
       _onRefresh.emit();
 

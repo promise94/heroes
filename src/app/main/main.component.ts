@@ -42,6 +42,21 @@ export class MainComponent implements OnInit {
     this.location.back();
   }
 
+  nextPage() { // 加载下一页
+    console.log('nextPage')
+  }
+
+  refresh() { // 刷新
+    console.log('refresh');
+  }
+
+  slideLeft() {
+    console.log('slideLeft');
+  }
+
+  slideRight() {
+    console.log('slideRight');
+  }
 }
 
 class Link {
